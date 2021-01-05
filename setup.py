@@ -10,8 +10,8 @@ if sys.version_info[0] < 3:
 setup(
     name="jaxfenics",
     description="JAX-FEniCS interface",
-    url="https://github.com/IvanYashchuk/jax-fenics",
-    author="Ivan Yashchuk",
+    url="https://github.com/mansura-habiba/jax-fenics",
+    author="Mansura Habiba",
     license="MIT",
     packages=["jaxfenics"],
     install_requires=["jax", "fenics", "fdm", "scipy"],
