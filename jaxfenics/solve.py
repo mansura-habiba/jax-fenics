@@ -5,7 +5,8 @@ import jax
 import jax.numpy as np
 
 from jax.core import Primitive
-from jax.interpreters.ad import defvjp, defvjp_all, batching
+from jax.interpreters.ad import defvjp, defvjp_all
+from jax.interpreters import batching
 from jax.api import defjvp_all
 
 import functools
