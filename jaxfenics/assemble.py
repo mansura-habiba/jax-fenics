@@ -6,6 +6,7 @@ import jax.numpy as np
 
 from jax.core import Primitive
 from jax.interpreters.ad import defvjp, defvjp_all
+from jax.interpreters import batching
 from jax.api import defjvp_all
 
 from .helpers import (
@@ -193,7 +194,7 @@ def build_jax_assemble_eval(fenics_templates: FenicsVariable) -> Callable:
             res = np.asarray(res)
             return res, batch_axes[0]
 
-        jax.batching.primitive_batchers[jax_assemble_eval_p] = jax_assemble_eval_batch
+        batching.primitive_batchers[jax_assemble_eval_p] = jax_assemble_eval_batch
 
         # @trace("djax_assemble_eval")
         def djax_assemble_eval(*args):
